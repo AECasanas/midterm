@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display: flex nav</title>
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="css/font-awesome-4.6.3/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/nav.css" />
+  </head>
+
+  <body>
+    
+    <header>Welcome to the World's Most Famous Recipes, Reviews, and Delivery Page</header>
+    <header>
+      <a href="#" class="logo"><i class="fa fa-bullseye fa-3x"></i></a>
+      <nav>
+        <ul>
+          <li><a href="#recipes" >Recipes</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#delivery">Delivery</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="sign-out-link">Sign Out</a>
+    </header>
+<section><img src="css/font-awesome-4.6.3/images/banner.png"></section>
+
+
+    <div class="content">
+    </div>    
+
+    <script>
+      const data = {
+        recipes:
+          "<img src= css/font-awesome-4.6.3/images/recipes.png width=150px height=150px><h1>Recipes</h1> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio maiores adipisci quibusdam repudiandae dolor vero placeat esse sit! Quibusdam saepe aperiam explicabo placeat optio, consequuntur nihil voluptatibus expedita quia vero perferendis, deserunt et incidunt eveniet temporibus doloremque possimus facilis.<img>downloads/midterm-fall-2021-main/css/font-awesome-4.6.3/images/recipes.png</img></p>" ,
+          
+
+        reviews:
+          "<img src= css/font-awesome-4.6.3/images/review.jpg width=150px height=150px><h1>Reviews</h1> <p>Asperiores laudantium, rerum ratione consequatur, culpa consectetur possimus atque ab tempore illum non dolor nesciunt. Neque, rerum. A vel non incidunt, quod doloremque dignissimos necessitatibus aliquid laboriosam architecto at cupiditate commodi expedita in, quae blanditiis.<img>downloads/midterm-fall-2021-main/css/font-awesome-4.6.3/images/recipes.png</img></p>",
+
+        delivery:
+          "<img src= css/font-awesome-4.6.3/images/delivery.jpg width=150px height=150px><h1>Delivery</h1> <p>Possimus labore, officia dolore! Eaque ratione saepe, alias harum laboriosam deserunt laudantium blanditiis eum explicabo placeat reiciendis labore iste sint. Consectetur expedita dignissimos, non quos distinctio, eos rerum facilis eligendi.<img>downloads/midterm-fall-2021-main/css/font-awesome-4.6.3/images/recipes.png</img></p>",
+      };
+
+      var tabs = document.querySelectorAll("nav a");
+      var contentPara = document.querySelector(".content");
+
+      // when the hash changes
+      function setActiveTabAccordingToHash(type) {
+        makeAllTabsInactive();
+        var tabToActivate = document.querySelector(`a[href="#${type}"]`);
+        tabToActivate.classList.add("active");
+      }
+
+      function makeAllTabsInactive() {
+        tabs.forEach((tab) => tab.classList.remove("active"));
+      }
+
+      // runs on page load and whenever the hash changes
+      function setContentAccordingToHash() {
+        var type = window.location.hash.substring(1);
+        console.log("substring", type);
+        contentPara.innerHTML = data[type];
+        setActiveTabAccordingToHash(type);
+      }
+
+      // only runs once on page load
+      function initializePage() {
+        if (!window.location.hash) {
+          window.location.hash = "recipes";
+          document.querySelector('[href="#recipes"]').classList.add("active");
+        }
+        setContentAccordingToHash();
+      }
+
+      window.addEventListener("hashchange", setContentAccordingToHash);
+
+      initializePage();
+
+      jQuery(document).ready(function ($) {
+
+    $('#checkbox').change(function(){
+      setInterval(function () {
+          moveRight();
+      }, 3000);
+    });
+    
+      var slideCount = $('#slider ul li').length;
+      var slideWidth = $('#slider ul li').width();
+      var slideHeight = $('#slider ul li').height();
+      var sliderUlWidth = slideCount * slideWidth;
+      
+      $('#slider').css({ width: slideWidth, height: slideHeight });
+      
+      $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+      
+      $('#slider ul li:last-child').prependTo('#slider ul');
+  
+      function moveLeft() {
+          $('#slider ul').animate({
+              left: + slideWidth
+          }, 200, function () {
+              $('#slider ul li:last-child').prependTo('#slider ul');
+              $('#slider ul').css('left', '');
+          });
+      };
+  
+      function moveRight() {
+          $('#slider ul').animate({
+              left: - slideWidth
+          }, 200, function () {
+              $('#slider ul li:first-child').appendTo('#slider ul');
+              $('#slider ul').css('left', '');
+          });
+      };
+  
+      $('a.control_prev').click(function () {
+          moveLeft();
+      });
+  
+      $('a.control_next').click(function () {
+          moveRight();
+      });
+  
+  });    
+  
+    </script>
+
+
+
+  </body>
+</html>

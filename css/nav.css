@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+.site-header {
+  background: #0d1313;
+  color: rgb(253, 250, 250);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.logo {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #cdd0d0;
+  padding: 20px;
+  display: inline-block;
+}
+.site-nav .active a {
+  font-weight: bold;
+  color: #62debe;
+  background: #444;
+}
+
+.account-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.account-dropdown ul {
+  display: none;
+}
+
+.sign-out-link {
+  color: #62debe;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+  .site-nav {
+    order: 2;
+    background: #333;
+    width: 100%;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: #0d1313;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.logo {
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+
+nav ul {
+  font: ;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-transform: uppercase;
+  color: #cdd0d0;
+  padding: 20px;
+  display: inline-block;
+}
+
+a.active {
+  font-weight: bold;
+  color: #62debe;
+  background: #444;
+}
+
+.sign-out-link {
+  color: #53598b;
+  font-size: 0.8rem;
+  margin-left: auto;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
+
+html {
+  border-top: 5px solid #fff;
+  background: #c5f5e2;
+  color: #2a2a2a;
+}
+
+html, body {
+  margin: 20;
+  padding: 50;
+  font-family: 'Open Sans';
+}
+
+h1 {
+  color: rgb(41, 40, 109);
+  text-align: center;
+  font-weight: 500;
+}
+
+
+/*added for responsive*/
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+  }
+  nav {
+    order: 2;
+    background: #333;
+    width: 100%;
+  }
+}
+
+.content {
+  color: black;
+  margin: 50px;
+}
+
+
